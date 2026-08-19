@@ -74,5 +74,5 @@ CASE UPPER(prd_line)
 CAST(prd_start_dt AS DATE), --Casting data type from DATETIME to DATE
 CAST(
 	LEAD(prd_start_dt) over(PARTITION BY prd_key order by prd_start_dt)-1 
-	AS DATE) as prd_end_dt_test --Calculate end date as one day before next start date.#####This is known as data enrichment, making the data enhaced for analysis
+	AS DATE) as prd_end_test --Calculate end date as one day before next start date.#####This is known as data enrichment, making the data enhaced for analysis
 FROM bronze.crm_prd_info;
